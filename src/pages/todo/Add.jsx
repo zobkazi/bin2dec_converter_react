@@ -1,9 +1,11 @@
-import { useState } from "react";
-import PropTypes from 'prop-types';
+// /src/pages/todo/Add.jsx
+import  { useEffect, useState } from "react";
+import PropTypes from "prop-types";
+import useTodoStore from "../../store/todoStore"
+import axios from "axios";
 
-
-
-const TodoForm = ({ addTodo }) => {
+const TodoForm = () => {
+  const { addTodo } = useTodoStore(); // Access addTodo from the store
   const [newTodo, setNewTodo] = useState("");
   const [newCategory, setNewCategory] = useState("Personal");
   const [newPriority, setNewPriority] = useState("Low");
@@ -11,40 +13,80 @@ const TodoForm = ({ addTodo }) => {
   const [newNotes, setNewNotes] = useState("");
   const [newRecurring, setNewRecurring] = useState("");
   const [newTags, setNewTags] = useState("");
+  
+  // Validation state
+  const [errorMessage, setErrorMessage] = useState("");
+  const [successMessage, setSuccessMessage] = useState("");
 
   const taskCategories = ["Finance", "Personal", "Work", "Bills", "Shopping", "Health"];
   const priorities = ["Low", "Medium", "High"];
   const recurringOptions = ["", "Daily", "Weekly", "Monthly"];
 
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    if (newTodo.trim() && newDueDate) {
-      addTodo({
-        text: newTodo,
-        category: newCategory,
-        priority: newPriority,
-        dueDate: newDueDate,
-        tags: newTags.split(",").map(tag => tag.trim()),
-        completed: false,
-        subtasks: [],
-        notes: newNotes,
-        recurring: newRecurring,
-      });
+  useEffect(() => {
+    // Load todos from local storage when component mounts
+    const storedTodos = JSON.parse(localStorage.getItem("todos")) || [];
+    storedTodos.forEach((todo) => addTodo(todo));
+  }, [addTodo]);
 
-      // Clear the form
-      setNewTodo("");
-      setNewCategory("Personal");
-      setNewPriority("Low");
-      setNewDueDate("");
-      setNewNotes("");
-      setNewTags("");
-      setNewRecurring("");
+  useEffect(() => {
+    // Save todos to local storage whenever the todos array changes
+    localStorage.setItem("todos", JSON.stringify(useTodoStore.getState().todos));
+  }, []);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setErrorMessage("");
+    setSuccessMessage("");
+
+    // Validate form inputs
+    if (!newTodo.trim()) {
+      setErrorMessage("Task cannot be empty.");
+      return;
     }
+    
+    if (!newDueDate) {
+      setErrorMessage("Due date is required.");
+      return;
+    }
+
+    const newTask = {
+      text: newTodo,
+      category: newCategory,
+      priority: newPriority,
+      dueDate: newDueDate,
+      tags: newTags.split(",").map((tag) => tag.trim()),
+      completed: false,
+      notes: newNotes,
+      recurring: newRecurring,
+    };
+
+    // Add todo to local state
+    addTodo(newTask);
+
+    try {
+      // Send the new task to the backend
+      await axios.post("/api/todos", newTask);
+      setSuccessMessage("Task added successfully!");
+    } catch (error) {
+      console.error("Error saving todo:", error);
+      setErrorMessage("Failed to save the task. Please try again.");
+    }
+
+    // Clear the form fields
+    setNewTodo("");
+    setNewCategory("Personal");
+    setNewPriority("Low");
+    setNewDueDate("");
+    setNewNotes("");
+    setNewTags("");
+    setNewRecurring("");
   };
 
   return (
     <form onSubmit={handleSubmit} className="bg-white rounded-lg shadow-lg p-6">
       <h1 className="text-2xl font-bold mb-4 text-center">Add New Task</h1>
+      {errorMessage && <div className="text-red-500 mb-2">{errorMessage}</div>}
+      {successMessage && <div className="text-green-500 mb-2">{successMessage}</div>}
       <input
         type="text"
         placeholder="Add a new task..."
@@ -113,7 +155,6 @@ const TodoForm = ({ addTodo }) => {
 
 export default TodoForm;
 
-
 TodoForm.propTypes = {
-    addTodo: PropTypes.func.isRequired,
-  }
+  addTodo: PropTypes.func.isRequired,
+};

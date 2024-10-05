@@ -1,8 +1,10 @@
-import PropTypes from 'prop-types';
+// /src/pages/todo/TodoList.jsx
 
+import useTodoStore from "../store/todoStore";
 
+const TodoList = () => {
+  const { todos, removeTodo, toggleComplete } = useTodoStore();
 
-const TodoList = ({ todos, toggleComplete, removeTodo }) => {
   return (
     <div className="w-full max-w-md">
       <h1 className="text-2xl font-bold mb-4 text-center">Task List</h1>
@@ -45,10 +47,3 @@ const TodoList = ({ todos, toggleComplete, removeTodo }) => {
 };
 
 export default TodoList;
-
-TodoList.propTypes = {
-    todos: PropTypes.array.isRequired,
-    toggleComplete: PropTypes.func.isRequired,
-    removeTodo: PropTypes.func.isRequired,
-
-  }
