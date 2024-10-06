@@ -1,10 +1,8 @@
-import PropTypes from 'prop-types';
-
-
+import PropTypes from "prop-types";
 
 const TodoList = ({ todos, toggleComplete, removeTodo }) => {
   return (
-    <div className="w-full max-w-md">
+    <div className="w-full max-w-md mx-auto">
       <h1 className="text-2xl font-bold mb-4 text-center">Task List</h1>
       <ul className="mt-4">
         {todos.length === 0 ? (
@@ -44,11 +42,10 @@ const TodoList = ({ todos, toggleComplete, removeTodo }) => {
   );
 };
 
-export default TodoList;
-
 TodoList.propTypes = {
-    todos: PropTypes.array.isRequired,
-    toggleComplete: PropTypes.func.isRequired,
-    removeTodo: PropTypes.func.isRequired,
+  todos: PropTypes.array.isRequired,
+  toggleComplete: PropTypes.func.isRequired,
+  removeTodo: PropTypes.func.isRequired,
+};
 
-  }
+export default TodoList;
