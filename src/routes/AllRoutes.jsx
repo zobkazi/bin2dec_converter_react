@@ -14,7 +14,10 @@ import CurrencyInput from '../components/ui/CurrencyInput';
 import RGBColorPicker from '../components/ui/web/RGBColorPicker';
 import CMYKColorPicker from '../components/ui/web/CMYKColorPicker';
 import RedirectCodeGenerator from '../components/ui/web/RedirectCodeGenerator';
-
+import UrlEncoder from '../components/ui/web/UrlEncoder';
+import UrlDecoder from '../components/ui/web/UrlDecoder';
+import BrowserWindowSize from '../components/ui/web/BrowserWindowSize';
+import LocationAndOnlineCheck from '../components/ui/web/LocationAndOnlineCheck';
 
 
 const AllRoutes = () => {
@@ -39,6 +42,11 @@ const AllRoutes = () => {
           <Route path="/rgb-color-picker" component={RGBColorPicker} />
           <Route path="/cmyk-color-picker" component={CMYKColorPicker} />
           <Route path="/redirect-code-generator" component={RedirectCodeGenerator} />
+          <Route path="/urlencoder" component={UrlEncoder} />
+          <Route path="/urldecoder" component={UrlDecoder} />
+          <Route path="/browser-window-size" component={BrowserWindowSize} />
+          <Route path="/location-and-online-check" component={LocationAndOnlineCheck} />
+
           
           {/* Default route or fallback */}
           <Route path="/" component={() => <h1 className="text-2xl">Welcome! Select a component from the menu.</h1>} />

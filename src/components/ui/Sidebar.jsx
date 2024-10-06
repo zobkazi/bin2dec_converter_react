@@ -17,6 +17,10 @@ const SidebarData = [
   { id: 13, name: 'RGB Color Picker', link: '/rgb-color-picker' },
   { id: 14, name: 'CMYK Color Picker', link: '/cmyk-color-picker' },
   {id: 15, name: "RedirectCodeGenerator", link: "/redirect-code-generator"},
+  {id: 16, name: "UrlEncoder", link: "/urlencoder"},
+  {id: 17, name: "UrlDecoder", link: "/urldecoder"},
+  {id: 18, name: "BrowserWindowSize", link: "/browser-window-size"},
+  {id: 19, name: "LocationAndOnlineCheck", link: "/location-and-online-check"},
 ];
 
 const Sidebar = () => {
