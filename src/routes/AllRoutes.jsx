@@ -19,6 +19,16 @@ import UrlDecoder from '../components/ui/web/UrlDecoder';
 import BrowserWindowSize from '../components/ui/web/BrowserWindowSize';
 import LocationAndOnlineCheck from '../components/ui/web/LocationAndOnlineCheck';
 import WebsiteTrafficTracker from '../components/ui/web/WebsiteTrafficTracker';
+import AlarmClock from '../components/ui/tools/AlarmClock';
+import MyCalendar from '../components/ui/tools/Calendar';
+import MultinationalCalendar from '../components/ui/tools/MultinationalCalendar';
+import CPSTest from '../components/ui/tools/CPSTest';
+import MicrophoneTest from '../components/ui/tools/MicrophoneTest';
+import RandomPasswordGenerator from '../components/ui/tools/RandomPasswordGenerator';
+import RandomNumberGenerator from '../components/ui/tools/RandomNumberGenerator';
+import WordCounter from '../components/ui/tools/WordCounter';
+import NumberToBengali from '../components/ui/tools/NumberToBengali';
+import Num2Bn from '../components/ui/tools/Num2Bn';
 
 const AllRoutes = () => {
   return (
@@ -47,7 +57,17 @@ const AllRoutes = () => {
           <Route path="/browser-window-size" component={BrowserWindowSize} />
           <Route path="/location-and-online-check" component={LocationAndOnlineCheck} />
           <Route path="/website-traffic-tracker" component={WebsiteTrafficTracker} />
-          
+          <Route path="/alarm-clock" component={AlarmClock} />
+          <Route path="/calendar" component={MyCalendar} />
+          <Route path="/multinational-calendar" component={MultinationalCalendar} />
+          <Route path="/cpstest" component={CPSTest} />
+          <Route path="/microphonetest" component={MicrophoneTest} />
+          <Route path="/random-password-generator" component={RandomPasswordGenerator} />
+          <Route path="/random-number-generator" component={RandomNumberGenerator} />
+          <Route path="/word-counter" component={WordCounter} />
+          <Route path="/numbertobengali" component={NumberToBengali} />
+          <Route path="/num2bn" component={Num2Bn} />
+
           {/* Default route or fallback */}
           <Route path="/" component={() => <h1 className="text-2xl">Welcome! Select a component from the menu.</h1>} />
         </div>

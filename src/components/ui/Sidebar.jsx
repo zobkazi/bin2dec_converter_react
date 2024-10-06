@@ -22,6 +22,16 @@ const SidebarData = [
   {id: 18, name: "BrowserWindowSize", link: "/browser-window-size"},
   {id: 19, name: "LocationAndOnlineCheck", link: "/location-and-online-check"},
   {id: 20, name: "WebsiteTrafficTracker", link: "/website-traffic-tracker"},
+  {id: 21, name: "AlarmClock", link: "/alarm-clock"},
+  {id: 22, name: "Calendar", link: "/calendar"},
+  {id: 23, name: "MultinationalCalendar", link: "/multinational-calendar"},
+  {id: 24, name: "CPSTest", link: "/cpstest"},
+  {id: 25, name: "MicrophoneTest", link: "/microphonestest"},
+  {id: 26, name: "RandomPasswordGenerator", link: "/random-password-generator"},
+  {id: 27, name: "RandomNumberGenerator", link: "/random-number-generator"},
+  {id: 28, name: "WordCounter", link: "/word-counter"},
+  {id: 30, name: "NumberToBengal", link: "/num2bn"},
+
 ];
 
 const Sidebar = () => {
