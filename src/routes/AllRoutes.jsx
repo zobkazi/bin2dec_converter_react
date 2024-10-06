@@ -18,7 +18,7 @@ import UrlEncoder from '../components/ui/web/UrlEncoder';
 import UrlDecoder from '../components/ui/web/UrlDecoder';
 import BrowserWindowSize from '../components/ui/web/BrowserWindowSize';
 import LocationAndOnlineCheck from '../components/ui/web/LocationAndOnlineCheck';
-
+import WebsiteTrafficTracker from '../components/ui/web/WebsiteTrafficTracker';
 
 const AllRoutes = () => {
   return (
@@ -46,7 +46,7 @@ const AllRoutes = () => {
           <Route path="/urldecoder" component={UrlDecoder} />
           <Route path="/browser-window-size" component={BrowserWindowSize} />
           <Route path="/location-and-online-check" component={LocationAndOnlineCheck} />
-
+          <Route path="/website-traffic-tracker" component={WebsiteTrafficTracker} />
           
           {/* Default route or fallback */}
           <Route path="/" component={() => <h1 className="text-2xl">Welcome! Select a component from the menu.</h1>} />

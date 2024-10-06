@@ -21,6 +21,7 @@ const SidebarData = [
   {id: 17, name: "UrlDecoder", link: "/urldecoder"},
   {id: 18, name: "BrowserWindowSize", link: "/browser-window-size"},
   {id: 19, name: "LocationAndOnlineCheck", link: "/location-and-online-check"},
+  {id: 20, name: "WebsiteTrafficTracker", link: "/website-traffic-tracker"},
 ];
 
 const Sidebar = () => {
