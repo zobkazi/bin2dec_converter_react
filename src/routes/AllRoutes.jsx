@@ -29,6 +29,7 @@ import RandomNumberGenerator from '../components/ui/tools/RandomNumberGenerator'
 import WordCounter from '../components/ui/tools/WordCounter';
 import NumberToBengali from '../components/ui/tools/NumberToBengali';
 import Num2Bn from '../components/ui/tools/Num2Bn';
+import Home from '../pages/Home';
 
 const AllRoutes = () => {
   return (
@@ -69,7 +70,7 @@ const AllRoutes = () => {
           <Route path="/num2bn" component={Num2Bn} />
 
           {/* Default route or fallback */}
-          <Route path="/" component={() => <h1 className="text-2xl">Welcome! Select a component from the menu.</h1>} />
+          <Route path="/" component={Home} />
         </div>
       </div>
     </>
