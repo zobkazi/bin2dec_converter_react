@@ -96,7 +96,7 @@ const MusicPlayer = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 flex flex-col items-center justify-center">
+    <div className="min-h-screen bg-purple-800 flex flex-col items-center justify-center">
       <div className="bg-white shadow-lg rounded-lg p-8 max-w-sm w-full">
         {/* Track info */}
         <h1 className="text-2xl font-bold mb-2">{tracks[currentTrackIndex].title}</h1>
