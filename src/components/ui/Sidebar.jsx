@@ -62,7 +62,11 @@ const Sidebar = () => {
           isOpen ? 'translate-x-0' : '-translate-x-full'
         } transition-transform duration-300 ease-in-out sm:translate-x-0 sm:block`}
       >
-        <div className="p-4 font-bold text-lg border-b border-gray-700">Menu</div>
+        <div className="p-4 font-bold text-lg border-b border-gray-700">
+          <Link href="/" className="text-white">
+            Home
+          </Link>
+        </div>
         <ul className="flex flex-col space-y-2 p-4">
           {SidebarData.map((item) => (
             <li key={item.id}>

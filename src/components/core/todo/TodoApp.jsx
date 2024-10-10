@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import  { useState } from "react";
 import TodoForm from "../../ui/TodoForm";
 import TodoList from "../../ui/TodoList";
 
@@ -22,7 +22,7 @@ const TodoApp = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-100 flex items-center justify-center">
+    <div className="min-h-screen bg-purple-800 flex items-center justify-center">
       <div className="w-full max-w-lg">
         <TodoForm addTodo={addTodo} />
         <TodoList todos={todos} toggleComplete={toggleComplete} removeTodo={removeTodo} />

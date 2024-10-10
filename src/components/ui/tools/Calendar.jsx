@@ -10,7 +10,7 @@ const MyCalendar = () => {
   };
 
   return (
-    <div className="max-w-md mx-auto p-6 bg-white rounded-lg shadow-md">
+    <div className="max-w-md mx-auto p-6 bg-purple-100 rounded-lg shadow-md">
       <h1 className="text-2xl font-bold mb-4 text-center">Select a Date</h1>
       <Calendar 
         onChange={handleDateChange} 
