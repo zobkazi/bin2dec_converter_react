@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import { useState } from 'react';
 
 const RGBColorPicker = () => {
   const [red, setRed] = useState(0);
@@ -41,7 +41,7 @@ const RGBColorPicker = () => {
   const rgbColor = `rgb(${red}, ${green}, ${blue})`;
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-4">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-purple-800 p-4">
       <div className="bg-white shadow-lg rounded-lg p-6 w-full max-w-lg text-center">
         <h1 className="text-2xl font-bold mb-4">RGB Color Picker</h1>
 

@@ -49,7 +49,7 @@ const AlarmClock = () => {
   };
 
   return (
-    <div className="max-w-md mx-auto p-6 bg-white rounded-lg shadow-md">
+    <div className="max-w-md mx-auto p-6 bg-purple-800 rounded-lg shadow-md">
       <h1 className="text-2xl font-bold mb-4 text-center">Alarm Clock</h1>
       <h2 className="text-xl font-semibold mb-2 text-center">Current Time</h2>
       <p className="text-center text-2xl mb-4">{currentTime.toLocaleTimeString()}</p>

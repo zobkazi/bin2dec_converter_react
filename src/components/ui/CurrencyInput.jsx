@@ -41,7 +41,7 @@ const CurrencyInput = () => {
   const selectedCurrencySymbol = currency;
 
   return (
-    <div className="max-w-sm mx-auto bg-white shadow-md rounded-lg p-6 mt-10">
+    <div className="max-w-sm mx-auto bg-purple-800 shadow-md rounded-lg p-6 mt-10">
       <h2 className="text-xl font-semibold mb-4">Currency Input</h2>
       <label htmlFor="currency" className="block text-sm font-medium text-gray-700 mb-2">
         Currency:
