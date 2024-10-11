@@ -30,6 +30,8 @@ import WordCounter from '../components/ui/tools/WordCounter';
 import NumberToBengali from '../components/ui/tools/NumberToBengali';
 import Num2Bn from '../components/ui/tools/Num2Bn';
 import Home from '../pages/Home';
+import AgeCalculator from '../components/ui/math/AgeCalculator';
+import AgeCalculatorBangla from '../components/ui/math/AgeCalculatorBangla';
 
 const AllRoutes = () => {
   return (
@@ -68,6 +70,8 @@ const AllRoutes = () => {
           <Route path="/word-counter" component={WordCounter} />
           <Route path="/numbertobengali" component={NumberToBengali} />
           <Route path="/num2bn" component={Num2Bn} />
+          <Route path="/age-calculator" component={AgeCalculator} />
+          <Route path="/age-calculator-bangla" component={AgeCalculatorBangla} />
 
           {/* Default route or fallback */}
           <Route path="/" component={Home} />

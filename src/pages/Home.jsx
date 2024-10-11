@@ -33,7 +33,13 @@ const Home = () => {
     };
 
     return (
-        <section className="bg-purple-800 h-screen bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern.svg')] dark:bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern-dark.svg')]">
+      <div className=''>
+        <header>
+            <h1>
+                Welcome to Flowbite
+            </h1>
+        </header>
+<section className="bg-purple-800 h-screen bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern.svg')] dark:bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern-dark.svg')]">
             <div className="py-8 px-4 mx-auto text-center lg:py-16 z-10 relative">
                 <a
                     href="#"
@@ -82,6 +88,9 @@ const Home = () => {
             </div>
             <div className="bg-gradient-to-b from-blue-50 to-transparent dark:from-blue-900 h-screen absolute top-0 left-0 z-0"></div>
         </section>
+
+      </div>
+        
     );
 };
 

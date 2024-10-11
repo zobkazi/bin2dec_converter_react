@@ -31,6 +31,8 @@ const SidebarData = [
   {id: 27, name: "RandomNumberGenerator", link: "/random-number-generator"},
   {id: 28, name: "WordCounter", link: "/word-counter"},
   {id: 30, name: "NumberToBengal", link: "/num2bn"},
+  {id: 31, name: "AgeCalculator", link: "/age-calculator"},
+  {id: 32, name: "AgeCalculatorBangla", link: "/age-calculator-bangla"},
 
 ];
 

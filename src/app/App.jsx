@@ -3,7 +3,14 @@ import Sidebar from '../components/ui/Sidebar';
 import AllRoutes from '../routes/AllRoutes';
 const App = () => {
   return (
-    <Router>
+    <div className="">
+    <header>
+          <h1>
+              Welcome to All Tolls 
+          </h1>
+      </header>
+      <Router>
+   
       <div className="flex flex-col sm:flex-row">
         <Sidebar />
         
@@ -12,6 +19,8 @@ const App = () => {
         </div>
       </div>
     </Router>
+    </div>
+    
   );
 }
 
