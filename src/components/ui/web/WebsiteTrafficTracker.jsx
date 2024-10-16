@@ -1,5 +1,5 @@
-import { useState } from 'react';
-import { Line } from 'react-chartjs-2';
+import { useState } from "react";
+import { Line } from "react-chartjs-2";
 import {
   Chart as ChartJS,
   CategoryScale,
@@ -8,43 +8,53 @@ import {
   LineElement,
   Title,
   Tooltip,
-  Legend
-} from 'chart.js';
+  Legend,
+} from "chart.js";
 
 // Register required components
-ChartJS.register(CategoryScale, LinearScale, PointElement, LineElement, Title, Tooltip, Legend);
+ChartJS.register(
+  CategoryScale,
+  LinearScale,
+  PointElement,
+  LineElement,
+  Title,
+  Tooltip,
+  Legend
+);
 
 const WebsiteTrafficTracker = () => {
   const [trafficData, setTrafficData] = useState([]);
-  const [dateInput, setDateInput] = useState('');
-  const [trafficInput, setTrafficInput] = useState('');
+  const [dateInput, setDateInput] = useState("");
+  const [trafficInput, setTrafficInput] = useState("");
 
   const handleAddData = () => {
     if (dateInput && trafficInput) {
       const newData = { date: dateInput, traffic: Number(trafficInput) };
       setTrafficData([...trafficData, newData]);
-      setDateInput('');
-      setTrafficInput('');
+      setDateInput("");
+      setTrafficInput("");
     }
   };
 
   const data = {
-    labels: trafficData.map(item => item.date),
+    labels: trafficData.map((item) => item.date),
     datasets: [
       {
-        label: 'Website Traffic',
-        data: trafficData.map(item => item.traffic),
+        label: "Website Traffic",
+        data: trafficData.map((item) => item.traffic),
         fill: false,
-        backgroundColor: 'rgba(75, 192, 192, 0.2)',
-        borderColor: 'rgba(75, 192, 192, 1)',
+        backgroundColor: "rgba(75, 192, 192, 0.2)",
+        borderColor: "rgba(75, 192, 192, 1)",
       },
     ],
   };
 
   return (
     <div className="max-w-4xl mx-auto p-6 bg-purple-800 rounded-lg shadow-lg">
-      <h1 className="text-2xl font-bold mb-4 text-center">Website Traffic Tracker</h1>
-      
+      <h1 className="text-2xl font-bold mb-4 text-center">
+        Website Traffic Tracker
+      </h1>
+
       <div className="mb-6">
         <input
           type="date"
@@ -72,16 +82,31 @@ const WebsiteTrafficTracker = () => {
           <Line data={data} />
           <div className="mt-4">
             <h2 className="text-lg font-semibold">Traffic Summary</h2>
-            <p>Total Visits: {trafficData.reduce((acc, curr) => acc + curr.traffic, 0)}</p>
-            <p>Average Visits: {(trafficData.reduce((acc, curr) => acc + curr.traffic, 0) / trafficData.length).toFixed(2)}</p>
-            <p>Max Visits: {Math.max(...trafficData.map(item => item.traffic))}</p>
-            <p>Min Visits: {Math.min(...trafficData.map(item => item.traffic))}</p>
+            <p>
+              Total Visits:{" "}
+              {trafficData.reduce((acc, curr) => acc + curr.traffic, 0)}
+            </p>
+            <p>
+              Average Visits:{" "}
+              {(
+                trafficData.reduce((acc, curr) => acc + curr.traffic, 0) /
+                trafficData.length
+              ).toFixed(2)}
+            </p>
+            <p>
+              Max Visits: {Math.max(...trafficData.map((item) => item.traffic))}
+            </p>
+            <p>
+              Min Visits: {Math.min(...trafficData.map((item) => item.traffic))}
+            </p>
           </div>
         </div>
       )}
-      
+
       {trafficData.length === 0 && (
-        <p className="text-center text-gray-500">No traffic data available. Please add some!</p>
+        <p className="text-center text-gray-500">
+          No traffic data available. Please add some!
+        </p>
       )}
     </div>
   );

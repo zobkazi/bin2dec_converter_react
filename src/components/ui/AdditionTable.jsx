@@ -1,11 +1,11 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 const AdditionTable = () => {
-  const [number, setNumber] = useState('');
+  const [number, setNumber] = useState("");
   const [table, setTable] = useState([]);
 
   const handleGenerateTable = () => {
-    if (!isNaN(number) && number !== '') {
+    if (!isNaN(number) && number !== "") {
       const tableArray = [];
       for (let i = 1; i <= 10; i++) {
         tableArray.push(`${number} + ${i} = ${parseInt(number) + i}`);
@@ -17,7 +17,7 @@ const AdditionTable = () => {
   };
 
   const handleKeyDown = (e) => {
-    if (e.key === 'Enter') {
+    if (e.key === "Enter") {
       handleGenerateTable();
     }
   };
@@ -25,7 +25,9 @@ const AdditionTable = () => {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-purple-800 p-4">
       <div className="bg-white shadow-lg rounded-lg p-6 w-full max-w-md">
-        <h1 className="text-2xl font-bold mb-4 text-center">Addition Table Generator</h1>
+        <h1 className="text-2xl font-bold mb-4 text-center">
+          Addition Table Generator
+        </h1>
 
         <input
           type="text"
@@ -45,10 +47,14 @@ const AdditionTable = () => {
 
         {table.length > 0 && (
           <div className="mt-4">
-            <h2 className="text-xl font-semibold mb-2">Addition Table for {number}:</h2>
+            <h2 className="text-xl font-semibold mb-2">
+              Addition Table for {number}:
+            </h2>
             <ul className="text-gray-700">
               {table.map((row, index) => (
-                <li key={index} className="py-1">{row}</li>
+                <li key={index} className="py-1">
+                  {row}
+                </li>
               ))}
             </ul>
           </div>

@@ -10,7 +10,14 @@ const TodoForm = ({ addTodo }) => {
   const [newRecurring, setNewRecurring] = useState("");
   const [newTags, setNewTags] = useState("");
 
-  const taskCategories = ["Finance", "Personal", "Work", "Bills", "Shopping", "Health"];
+  const taskCategories = [
+    "Finance",
+    "Personal",
+    "Work",
+    "Bills",
+    "Shopping",
+    "Health",
+  ];
   const priorities = ["Low", "Medium", "High"];
   const recurringOptions = ["", "Daily", "Weekly", "Monthly"];
 
@@ -22,7 +29,7 @@ const TodoForm = ({ addTodo }) => {
         category: newCategory,
         priority: newPriority,
         dueDate: newDueDate,
-        tags: newTags.split(",").map(tag => tag.trim()),
+        tags: newTags.split(",").map((tag) => tag.trim()),
         completed: false,
         subtasks: [],
         notes: newNotes,
@@ -102,7 +109,10 @@ const TodoForm = ({ addTodo }) => {
         onChange={(e) => setNewTags(e.target.value)}
         className="border rounded-lg p-2 w-full mb-2"
       />
-      <button type="submit" className="bg-blue-500 text-white rounded-lg px-4 py-2 w-full">
+      <button
+        type="submit"
+        className="bg-blue-500 text-white rounded-lg px-4 py-2 w-full"
+      >
         Add Task
       </button>
     </form>

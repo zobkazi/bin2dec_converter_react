@@ -25,7 +25,8 @@ const TodoList = ({ todos, toggleComplete, removeTodo }) => {
                   {todo.text}
                 </span>
                 <div className="text-xs text-gray-500">
-                  Category: {todo.category}, Priority: {todo.priority}, Due: {todo.dueDate}
+                  Category: {todo.category}, Priority: {todo.priority}, Due:{" "}
+                  {todo.dueDate}
                 </div>
               </div>
               <button

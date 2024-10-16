@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from 'react';
+import React, { useEffect, useState } from "react";
 
 const LocationAndOnlineCheck = () => {
   const [location, setLocation] = useState({
@@ -24,7 +24,7 @@ const LocationAndOnlineCheck = () => {
           }
         );
       } else {
-        alert('Geolocation is not supported by this browser.');
+        alert("Geolocation is not supported by this browser.");
       }
     };
 
@@ -35,13 +35,13 @@ const LocationAndOnlineCheck = () => {
       setOnlineStatus(navigator.onLine);
     };
 
-    window.addEventListener('online', updateOnlineStatus);
-    window.addEventListener('offline', updateOnlineStatus);
+    window.addEventListener("online", updateOnlineStatus);
+    window.addEventListener("offline", updateOnlineStatus);
 
     // Clean up event listeners on component unmount
     return () => {
-      window.removeEventListener('online', updateOnlineStatus);
-      window.removeEventListener('offline', updateOnlineStatus);
+      window.removeEventListener("online", updateOnlineStatus);
+      window.removeEventListener("offline", updateOnlineStatus);
     };
   }, []);
 
@@ -54,9 +54,11 @@ const LocationAndOnlineCheck = () => {
           <p className="text-lg">
             {location.latitude !== null && location.longitude !== null ? (
               <>
-                Latitude: <span className="font-semibold">{location.latitude}</span>
+                Latitude:{" "}
+                <span className="font-semibold">{location.latitude}</span>
                 <br />
-                Longitude: <span className="font-semibold">{location.longitude}</span>
+                Longitude:{" "}
+                <span className="font-semibold">{location.longitude}</span>
               </>
             ) : (
               <span className="text-red-500">Unable to retrieve location.</span>
@@ -66,8 +68,13 @@ const LocationAndOnlineCheck = () => {
 
         <div className="mb-4">
           <p className="text-lg">
-            Online Status: <span className={`font-semibold ${onlineStatus ? 'text-green-500' : 'text-red-500'}`}>
-              {onlineStatus ? 'Online' : 'Offline'}
+            Online Status:{" "}
+            <span
+              className={`font-semibold ${
+                onlineStatus ? "text-green-500" : "text-red-500"
+              }`}
+            >
+              {onlineStatus ? "Online" : "Offline"}
             </span>
           </p>
         </div>

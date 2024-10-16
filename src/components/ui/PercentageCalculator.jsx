@@ -1,12 +1,18 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 const PercentageCalculator = () => {
-  const [part, setPart] = useState('');
-  const [whole, setWhole] = useState('');
+  const [part, setPart] = useState("");
+  const [whole, setWhole] = useState("");
   const [percentage, setPercentage] = useState(null);
 
   const handleCalculate = () => {
-    if (part !== '' && whole !== '' && !isNaN(part) && !isNaN(whole) && whole !== '0') {
+    if (
+      part !== "" &&
+      whole !== "" &&
+      !isNaN(part) &&
+      !isNaN(whole) &&
+      whole !== "0"
+    ) {
       const result = (parseFloat(part) / parseFloat(whole)) * 100;
       setPercentage(result.toFixed(2));
     } else {
@@ -15,7 +21,7 @@ const PercentageCalculator = () => {
   };
 
   const handleKeyDown = (e) => {
-    if (e.key === 'Enter') {
+    if (e.key === "Enter") {
       handleCalculate();
     }
   };
@@ -23,7 +29,9 @@ const PercentageCalculator = () => {
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-purple-800 p-4">
       <div className="bg-white shadow-lg rounded-lg p-6 w-full max-w-md">
-        <h1 className="text-2xl font-bold mb-4 text-center">Percentage Calculator</h1>
+        <h1 className="text-2xl font-bold mb-4 text-center">
+          Percentage Calculator
+        </h1>
 
         <input
           type="text"

@@ -1,31 +1,31 @@
-import  { useState } from 'react';
+import { useState } from "react";
 
 const RedirectCodeGenerator = () => {
-  const [oldUrl, setOldUrl] = useState('');
-  const [newUrl, setNewUrl] = useState('');
-  const [redirectType, setRedirectType] = useState('php');
-  const [generatedCode, setGeneratedCode] = useState('');
+  const [oldUrl, setOldUrl] = useState("");
+  const [newUrl, setNewUrl] = useState("");
+  const [redirectType, setRedirectType] = useState("php");
+  const [generatedCode, setGeneratedCode] = useState("");
   const [copied, setCopied] = useState(false);
 
   const generateCode = () => {
-    let code = '';
-    
+    let code = "";
+
     switch (redirectType) {
-      case 'php':
+      case "php":
         code = `header('Location: ${newUrl}', true, 301);`;
         break;
-      case 'asp':
+      case "asp":
         code = `<%
 Response.Redirect("${newUrl}", true)
 %>`;
         break;
-      case 'apache':
+      case "apache":
         code = `Redirect 301 ${oldUrl} ${newUrl}`;
         break;
-      case 'html':
+      case "html":
         code = `<meta http-equiv="refresh" content="0;url=${newUrl}">`;
         break;
-      case 'javascript':
+      case "javascript":
         code = `window.location.href = "${newUrl}";`;
         break;
       default:
@@ -43,10 +43,10 @@ Response.Redirect("${newUrl}", true)
   };
 
   const resetFields = () => {
-    setOldUrl('');
-    setNewUrl('');
-    setRedirectType('php');
-    setGeneratedCode('');
+    setOldUrl("");
+    setNewUrl("");
+    setRedirectType("php");
+    setGeneratedCode("");
     setCopied(false);
   };
 
@@ -56,7 +56,9 @@ Response.Redirect("${newUrl}", true)
         <h1 className="text-2xl font-bold mb-4">301 Redirect Code Generator</h1>
 
         <div className="mb-4">
-          <label className="block font-semibold mb-2">Enter URL of old page:</label>
+          <label className="block font-semibold mb-2">
+            Enter URL of old page:
+          </label>
           <input
             type="text"
             value={oldUrl}
@@ -66,7 +68,9 @@ Response.Redirect("${newUrl}", true)
         </div>
 
         <div className="mb-4">
-          <label className="block font-semibold mb-2">Enter URL of new page:</label>
+          <label className="block font-semibold mb-2">
+            Enter URL of new page:
+          </label>
           <input
             type="text"
             value={newUrl}
@@ -76,7 +80,9 @@ Response.Redirect("${newUrl}", true)
         </div>
 
         <div className="mb-4">
-          <label className="block font-semibold mb-2">Select redirect type:</label>
+          <label className="block font-semibold mb-2">
+            Select redirect type:
+          </label>
           <select
             value={redirectType}
             onChange={(e) => setRedirectType(e.target.value)}
@@ -107,7 +113,7 @@ Response.Redirect("${newUrl}", true)
               {generatedCode}
             </div>
             <div className="text-sm text-green-600 mt-1">
-              {copied ? 'Code Copied!' : ''}
+              {copied ? "Code Copied!" : ""}
             </div>
           </div>
         )}

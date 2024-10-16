@@ -1,8 +1,8 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 const UrlEncoder = () => {
-  const [inputValue, setInputValue] = useState('');
-  const [encodedValue, setEncodedValue] = useState('');
+  const [inputValue, setInputValue] = useState("");
+  const [encodedValue, setEncodedValue] = useState("");
   const [copied, setCopied] = useState(false);
 
   const encodeUrl = () => {
@@ -18,8 +18,8 @@ const UrlEncoder = () => {
   };
 
   const resetFields = () => {
-    setInputValue('');
-    setEncodedValue('');
+    setInputValue("");
+    setEncodedValue("");
     setCopied(false);
   };
 
@@ -29,7 +29,9 @@ const UrlEncoder = () => {
         <h1 className="text-2xl font-bold mb-4">URL Encoder</h1>
 
         <div className="mb-4">
-          <label className="block font-semibold mb-2">Enter URL or String:</label>
+          <label className="block font-semibold mb-2">
+            Enter URL or String:
+          </label>
           <input
             type="text"
             value={inputValue}
@@ -56,7 +58,7 @@ const UrlEncoder = () => {
               {encodedValue}
             </div>
             <div className="text-sm text-green-600 mt-1">
-              {copied ? 'Encoded URL Copied!' : ''}
+              {copied ? "Encoded URL Copied!" : ""}
             </div>
           </div>
         )}

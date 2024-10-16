@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useState } from "react";
 
 const CMYKColorPicker = () => {
   const [cyan, setCyan] = useState(0);
@@ -16,7 +16,12 @@ const CMYKColorPicker = () => {
   };
 
   // Calculate RGB color from CMYK values
-  const rgbColor = cmykToRgb(cyan / 100, magenta / 100, yellow / 100, black / 100);
+  const rgbColor = cmykToRgb(
+    cyan / 100,
+    magenta / 100,
+    yellow / 100,
+    black / 100
+  );
 
   // Copy CMYK code to clipboard
   const copyToClipboard = (text) => {
@@ -32,11 +37,16 @@ const CMYKColorPicker = () => {
         <h1 className="text-2xl font-bold mb-4">CMYK Color Picker</h1>
 
         {/* Color display */}
-        <div className="h-32 w-full mb-6 rounded-lg" style={{ backgroundColor: rgbColor }}></div>
+        <div
+          className="h-32 w-full mb-6 rounded-lg"
+          style={{ backgroundColor: rgbColor }}
+        ></div>
 
         {/* Sliders for Cyan, Magenta, Yellow, and Black */}
         <div className="mb-4">
-          <label className="block font-semibold mb-2 text-cyan-500">Cyan: {cyan}%</label>
+          <label className="block font-semibold mb-2 text-cyan-500">
+            Cyan: {cyan}%
+          </label>
           <input
             type="range"
             min="0"
@@ -48,7 +58,9 @@ const CMYKColorPicker = () => {
         </div>
 
         <div className="mb-4">
-          <label className="block font-semibold mb-2 text-pink-500">Magenta: {magenta}%</label>
+          <label className="block font-semibold mb-2 text-pink-500">
+            Magenta: {magenta}%
+          </label>
           <input
             type="range"
             min="0"
@@ -60,7 +72,9 @@ const CMYKColorPicker = () => {
         </div>
 
         <div className="mb-4">
-          <label className="block font-semibold mb-2 text-yellow-500">Yellow: {yellow}%</label>
+          <label className="block font-semibold mb-2 text-yellow-500">
+            Yellow: {yellow}%
+          </label>
           <input
             type="range"
             min="0"
@@ -72,7 +86,9 @@ const CMYKColorPicker = () => {
         </div>
 
         <div className="mb-4">
-          <label className="block font-semibold mb-2 text-black-500">Black (Key): {black}%</label>
+          <label className="block font-semibold mb-2 text-black-500">
+            Black (Key): {black}%
+          </label>
           <input
             type="range"
             min="0"
@@ -91,22 +107,24 @@ const CMYKColorPicker = () => {
         {/* Button to copy CMYK code */}
         <button
           className="mt-2 bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 focus:outline-none"
-          onClick={() => copyToClipboard(`CMYK(${cyan}%, ${magenta}%, ${yellow}%, ${black}%)`)}
+          onClick={() =>
+            copyToClipboard(
+              `CMYK(${cyan}%, ${magenta}%, ${yellow}%, ${black}%)`
+            )
+          }
         >
-          {copied ? 'CMYK Copied!' : 'Copy CMYK'}
+          {copied ? "CMYK Copied!" : "Copy CMYK"}
         </button>
 
         {/* Display the RGB Conversion */}
-        <div className="mt-4 text-xl font-semibold">
-          RGB: {rgbColor}
-        </div>
+        <div className="mt-4 text-xl font-semibold">RGB: {rgbColor}</div>
 
         {/* Button to copy RGB code */}
         <button
           className="mt-2 bg-green-500 text-white px-4 py-2 rounded hover:bg-green-600 focus:outline-none"
           onClick={() => copyToClipboard(rgbColor)}
         >
-          {copied ? 'RGB Copied!' : 'Copy RGB'}
+          {copied ? "RGB Copied!" : "Copy RGB"}
         </button>
       </div>
     </div>

@@ -1,16 +1,16 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 
 const UrlDecoder = () => {
-  const [inputValue, setInputValue] = useState('');
-  const [decodedValue, setDecodedValue] = useState('');
+  const [inputValue, setInputValue] = useState("");
+  const [decodedValue, setDecodedValue] = useState("");
   const [copied, setCopied] = useState(false);
 
   const decodeUrl = () => {
     try {
       const decoded = decodeURIComponent(inputValue);
       setDecodedValue(decoded);
-    } catch ( error ) {
-      setDecodedValue('Invalid URL encoding');
+    } catch (error) {
+      setDecodedValue("Invalid URL encoding");
       console.error(error);
     }
   };
@@ -23,8 +23,8 @@ const UrlDecoder = () => {
   };
 
   const resetFields = () => {
-    setInputValue('');
-    setDecodedValue('');
+    setInputValue("");
+    setDecodedValue("");
     setCopied(false);
   };
 
@@ -34,7 +34,9 @@ const UrlDecoder = () => {
         <h1 className="text-2xl font-bold mb-4">URL Decoder</h1>
 
         <div className="mb-4">
-          <label className="block font-semibold mb-2">Enter URL or Encoded String:</label>
+          <label className="block font-semibold mb-2">
+            Enter URL or Encoded String:
+          </label>
           <input
             type="text"
             value={inputValue}
@@ -61,7 +63,7 @@ const UrlDecoder = () => {
               {decodedValue}
             </div>
             <div className="text-sm text-green-600 mt-1">
-              {copied ? 'Decoded URL Copied!' : ''}
+              {copied ? "Decoded URL Copied!" : ""}
             </div>
           </div>
         )}

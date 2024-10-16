@@ -1,9 +1,9 @@
-import React, { useState, useEffect } from 'react';
-import alarmSound from '../../../../public/alarm.mp3'; // Import your alarm sound file
+import React, { useState, useEffect } from "react";
+import alarmSound from "../../../../public/alarm.mp3"; // Import your alarm sound file
 
 const AlarmClock = () => {
   const [currentTime, setCurrentTime] = useState(new Date());
-  const [alarmTime, setAlarmTime] = useState('');
+  const [alarmTime, setAlarmTime] = useState("");
   const [alarms, setAlarms] = useState([]);
   const [volume, setVolume] = useState(1); // Volume level from 0 to 1
   const [isSoundEnabled, setIsSoundEnabled] = useState(true);
@@ -21,15 +21,15 @@ const AlarmClock = () => {
   // Check for alarms
   useEffect(() => {
     const checkAlarms = setInterval(() => {
-      const now = currentTime.toLocaleTimeString('en-US', { hour12: false });
-      alarms.forEach(alarm => {
+      const now = currentTime.toLocaleTimeString("en-US", { hour12: false });
+      alarms.forEach((alarm) => {
         if (now === alarm) {
           if (isSoundEnabled) {
             audioRef.current.volume = volume; // Set volume level
             audioRef.current.play(); // Play the alarm sound
           }
           alert(`Alarm! It's ${now}`);
-          setAlarms(prev => prev.filter(a => a !== alarm)); // Remove alarm after triggering
+          setAlarms((prev) => prev.filter((a) => a !== alarm)); // Remove alarm after triggering
         }
       });
     }, 1000);
@@ -40,19 +40,21 @@ const AlarmClock = () => {
   const handleAddAlarm = () => {
     if (alarmTime && !alarms.includes(alarmTime)) {
       setAlarms([...alarms, alarmTime]);
-      setAlarmTime('');
+      setAlarmTime("");
     }
   };
 
   const handleDeleteAlarm = (time) => {
-    setAlarms(alarms.filter(alarm => alarm !== time));
+    setAlarms(alarms.filter((alarm) => alarm !== time));
   };
 
   return (
     <div className="max-w-md mx-auto p-6 bg-purple-800 rounded-lg shadow-md">
       <h1 className="text-2xl font-bold mb-4 text-center">Alarm Clock</h1>
       <h2 className="text-xl font-semibold mb-2 text-center">Current Time</h2>
-      <p className="text-center text-2xl mb-4">{currentTime.toLocaleTimeString()}</p>
+      <p className="text-center text-2xl mb-4">
+        {currentTime.toLocaleTimeString()}
+      </p>
 
       <div className="mb-4">
         <h2 className="text-lg font-semibold mb-2">Set Alarm</h2>
