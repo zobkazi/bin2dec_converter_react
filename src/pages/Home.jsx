@@ -117,9 +117,15 @@ const Home = () => {
               </button>
             </div>
           </form>
+          <div>
+        
+      </div>
         </div>
-        <div className="bg-gradient-to-b from-blue-50 to-transparent dark:from-blue-900 h-screen absolute top-0 left-0 z-0"></div>
+        <div className="bg-gradient-to-b from-blue-50 to-transparent dark:from-blue-900 top-0 left-0 z-0">
+          
+        </div>
       </section>
+      
     </div>
   );
 };

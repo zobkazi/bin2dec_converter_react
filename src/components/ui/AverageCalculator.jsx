@@ -100,8 +100,8 @@ const EnhancedAverageCalculator = () => {
   };
 
   return (
-    <div className="flex flex-col items-center justify-center min-h-screen bg-gray-100 p-4">
-      <div className="bg-white shadow-lg rounded-lg p-6 w-full max-w-md">
+    <div className="flex flex-col items-center justify-center min-h-screen bg-purple-800 p-4">
+      <div className=" shadow-lg bg-purple-400 rounded-lg p-6 w-full max-w-md">
         <h1 className="text-2xl font-bold mb-4 text-center">
           Enhanced Average Calculator
         </h1>
