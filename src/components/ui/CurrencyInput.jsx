@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 // Function to format number as currency
 const formatCurrency = (value, currencySymbol) => {
@@ -43,11 +43,12 @@ const CurrencyInput = () => {
   const selectedCurrencySymbol = currency;
 
   return (
-    <div className="max-w-sm mx-auto bg-purple-800 shadow-md rounded-lg p-6 mt-10">
-      <h2 className="text-xl font-semibold mb-4">Currency Input</h2>
+    <div className="flex flex-col items-center justify-center min-h-screen bg-purple-800 p-4">
+    <div className="max-w-sm mx-auto bg-purple-400 shadow-md rounded-lg p-6 mt-10">
+      <h2 className="text-xl font-semibold mb-4 text-white">Currency Input</h2>
       <label
         htmlFor="currency"
-        className="block text-sm font-medium text-gray-700 mb-2"
+        className="block text-sm font-medium text-gray-300 mb-2"
       >
         Currency:
       </label>
@@ -66,7 +67,7 @@ const CurrencyInput = () => {
 
       <label
         htmlFor="amount"
-        className="block text-sm font-medium text-gray-700 mb-2"
+        className="block text-sm font-medium text-gray-300 mb-2"
       >
         Amount:
       </label>
@@ -80,6 +81,8 @@ const CurrencyInput = () => {
         className="block w-full border border-gray-300 rounded-md p-2 focus:outline-none focus:ring-2 focus:ring-blue-400"
       />
     </div>
+    </div>
+
   );
 };
 
