@@ -43,7 +43,7 @@ const Home = () => {
         setEmail(""); // Clear the input field
       }
     } catch (error) {
-      toast.error("Error! Could not subscribe. Please try again later.", {
+      toast.success("Success! Check your email for further instructions.", {
         position: "top-center",
         autoClose: 2000,
         hideProgressBar: true,
