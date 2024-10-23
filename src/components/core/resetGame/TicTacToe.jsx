@@ -1,9 +1,10 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import swal from "sweetalert";
 
 const TicTacToe = () => {
   const [board, setBoard] = useState(Array(9).fill(null));
   const [isXNext, setIsXNext] = useState(true);
-
+  
   const winner = calculateWinner(board);
 
   const handleClick = (index) => {
@@ -19,6 +20,14 @@ const TicTacToe = () => {
     setBoard(Array(9).fill(null));
     setIsXNext(true);
   };
+
+  useEffect(() => {
+    if (winner) {
+      swal("Game Over!", `Winner: ${winner}`, "success").then(resetGame);
+    } else if (board.every(Boolean)) {
+      swal("Game Over!", "It's a draw!", "info").then(resetGame);
+    }
+  }, [winner, board]);
 
   return (
     <div className="min-h-screen bg-gradient-to-r from-blue-400 to-purple-800 flex items-center justify-center">
