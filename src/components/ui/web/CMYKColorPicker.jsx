@@ -33,7 +33,7 @@ const CMYKColorPicker = () => {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-purple-800 p-4">
-      <div className="bg-white shadow-lg rounded-lg p-6 w-full max-w-lg text-center">
+      <div className="bg-purple-400 shadow-lg rounded-lg p-6 w-full max-w-lg text-center">
         <h1 className="text-2xl font-bold mb-4">CMYK Color Picker</h1>
 
         {/* Color display */}

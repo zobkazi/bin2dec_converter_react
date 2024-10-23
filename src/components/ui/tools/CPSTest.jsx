@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import { useState, useEffect } from "react";
 
 const CPSTest = () => {
   const [clicks, setClicks] = useState(0);
@@ -39,7 +39,8 @@ const CPSTest = () => {
   }, [isTesting]);
 
   return (
-    <div className="max-w-md mx-auto p-6 bg-white rounded-lg shadow-md text-center">
+  <div className="flex flex-col items-center justify-center min-h-screen bg-purple-800 p-4">
+      <div className="max-w-md mx-auto p-6 bg-purple-400 rounded-lg shadow-md text-center">
       <h1 className="text-2xl font-bold mb-4">CPS Test</h1>
 
       {isTesting ? (
@@ -68,6 +69,7 @@ const CPSTest = () => {
         </div>
       )}
     </div>
+  </div>
   );
 };
 

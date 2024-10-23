@@ -16,7 +16,8 @@ const MyCalendar = () => {
       <Calendar
         onChange={handleDateChange}
         value={selectedDate}
-        className="mb-4"
+        className="mb-4 bg-purple-400"
+        
       />
       <p className="text-center text-xl">
         Selected Date: {selectedDate.toLocaleDateString()}{" "}

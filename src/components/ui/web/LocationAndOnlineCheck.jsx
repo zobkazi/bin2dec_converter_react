@@ -47,7 +47,7 @@ const LocationAndOnlineCheck = () => {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-purple-800 p-4">
-      <div className="bg-white shadow-lg rounded-lg p-6 w-full max-w-md text-center">
+      <div className="bg-purple-400 shadow-lg rounded-lg p-6 w-full max-w-md text-center">
         <h1 className="text-2xl font-bold mb-4">Location and Online Status</h1>
 
         <div className="mb-4">
@@ -61,7 +61,7 @@ const LocationAndOnlineCheck = () => {
                 <span className="font-semibold">{location.longitude}</span>
               </>
             ) : (
-              <span className="text-red-500">Unable to retrieve location.</span>
+              <span className="text-red-500 font-semibold">Unable to retrieve location.</span>
             )}
           </p>
         </div>
