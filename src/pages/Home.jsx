@@ -1,9 +1,11 @@
 import { useState } from "react";
 import axios from "axios";
+import { ToastContainer, toast, Bounce } from "react-toastify";
+import 'react-toastify/dist/ReactToastify.css'; // Make sure to import the CSS
 
 const Home = () => {
   const [email, setEmail] = useState("");
-  const [message, setMessage] = useState("");
+  const [message] = useState("");
   const [error, setError] = useState(false);
 
   const handleSubmit = async (e) => {
@@ -12,7 +14,15 @@ const Home = () => {
     // Simple email validation
     const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
     if (!emailPattern.test(email)) {
-      setMessage("Please enter a valid email address.");
+      toast.error("Please enter a valid email address.", {
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        transition: Bounce,
+      });
       setError(true);
       return;
     }
@@ -20,13 +30,28 @@ const Home = () => {
     try {
       const response = await axios.post("/api/subscribe", { email });
       if (response.status === 200) {
-        setMessage("Success! Check your email for further instructions.");
+        toast.success("Success! Check your email for further instructions.", {
+          position: "top-center",
+          autoClose: 2000,
+          hideProgressBar: true,
+          closeOnClick: true,
+          pauseOnHover: true,
+          draggable: true,
+          transition: Bounce,
+        });
         setError(false);
         setEmail(""); // Clear the input field
       }
     } catch (error) {
-      // setMessage('Error! Could not subscribe. Please try again later.');
-      setMessage("Success! Check your email for further instructions.");
+      toast.error("Error! Could not subscribe. Please try again later.", {
+        position: "top-center",
+        autoClose: 2000,
+        hideProgressBar: true,
+        closeOnClick: true,
+        pauseOnHover: true,
+        draggable: true,
+        transition: Bounce,
+      });
       setError(false);
       console.error(error);
     }
@@ -40,12 +65,8 @@ const Home = () => {
             href="#"
             className="inline-flex justify-between items-center py-1 px-1 pe-4 mb-7 text-sm text-blue-700 bg-blue-100 rounded-full dark:bg-blue-900 dark:text-blue-300 hover:bg-blue-200 dark:hover:bg-blue-800"
           >
-            <span className="text-xs bg-blue-600 rounded-full text-white px-4 py-1.5 me-3">
-              New
-            </span>
-            <span className="text-sm font-medium">
-              New tools are available! Check it out.
-            </span>
+            <span className="text-xs bg-blue-600 rounded-full text-white px-4 py-1.5 me-3">New</span>
+            <span className="text-sm font-medium">New tools are available! Check it out.</span>
             <svg
               className="w-2.5 h-2.5 ms-2 rtl:rotate-180"
               aria-hidden="true"
@@ -66,15 +87,12 @@ const Home = () => {
             We invest in the world’s potential
           </h1>
           <p className="mb-8 text-lg font-normal text-gray-500 lg:text-xl sm:px-16 lg:px-48 dark:text-gray-200">
-            You will find all the tools you need under one umbrella. Use them as
-            you like for all your mathematical problems.
+            You will find all the tools you need under one umbrella. Use them as you like for all your mathematical problems.
           </p>
           {message && (
             <div
               className={`mb-4 p-2 rounded ${
-                error
-                  ? "bg-red-100 text-red-600"
-                  : "bg-green-100 text-green-600"
+                error ? "bg-red-100 text-red-600" : "bg-green-100 text-green-600"
               }`}
             >
               {message}
@@ -117,15 +135,11 @@ const Home = () => {
               </button>
             </div>
           </form>
-          <div>
-        
-      </div>
+          <div></div>
         </div>
-        <div className="bg-gradient-to-b from-blue-50 to-transparent dark:from-blue-900 top-0 left-0 z-0">
-          
-        </div>
+        <div className="bg-gradient-to-b from-blue-50 to-transparent dark:from-blue-900 top-0 left-0 z-0"></div>
       </section>
-      
+      <ToastContainer position="top-center" />
     </div>
   );
 };
