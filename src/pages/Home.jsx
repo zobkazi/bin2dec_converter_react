@@ -35,9 +35,9 @@ const Home = () => {
   return (
     <div className="">
       <header>
-        <h1>Welcome to Flowbite</h1>
+        <h1>Welcome to All Tolls</h1>
       </header>
-      <section className="bg-purple-800 h-screen bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern.svg')] dark:bg-[url('https://flowbite.s3.amazonaws.com/docs/jumbotron/hero-pattern-dark.svg')]">
+      <section className="bg-purple-800 h-screen bg-[url('https://images.unsplash.com/photo-1600585154340-be6161a56a0c?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80')]">
         <div className="py-8 px-4 mx-auto text-center lg:py-16 z-10 relative">
           <a
             href="#"
