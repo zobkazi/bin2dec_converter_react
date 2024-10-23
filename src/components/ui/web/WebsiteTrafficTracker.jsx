@@ -50,7 +50,8 @@ const WebsiteTrafficTracker = () => {
   };
 
   return (
-    <div className="max-w-4xl mx-auto p-6 bg-purple-800 rounded-lg shadow-lg">
+   <div className="flex flex-col items-center justify-center min-h-screen bg-purple-800 p-4">
+     <div className="max-w-4xl mx-auto p-6 bg-purple-400 rounded-lg shadow-lg">
       <h1 className="text-2xl font-bold mb-4 text-center">
         Website Traffic Tracker
       </h1>
@@ -109,6 +110,7 @@ const WebsiteTrafficTracker = () => {
         </p>
       )}
     </div>
+   </div>
   );
 };
 

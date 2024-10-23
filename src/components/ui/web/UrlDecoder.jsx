@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 const UrlDecoder = () => {
   const [inputValue, setInputValue] = useState("");
@@ -30,7 +30,7 @@ const UrlDecoder = () => {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-purple-800 p-4">
-      <div className="bg-white shadow-lg rounded-lg p-6 w-full max-w-lg text-center">
+      <div className="bg-purple-400 shadow-lg rounded-lg p-6 w-full max-w-lg text-center">
         <h1 className="text-2xl font-bold mb-4">URL Decoder</h1>
 
         <div className="mb-4">
@@ -47,7 +47,7 @@ const UrlDecoder = () => {
         </div>
 
         <button
-          className="bg-blue-500 text-white px-4 py-2 rounded hover:bg-blue-600 focus:outline-none mb-4"
+          className="bg-blue-500 text-white p-3 px-4 py-2 rounded hover:bg-blue-600 focus:outline-none mb-4"
           onClick={decodeUrl}
         >
           Decode URL
