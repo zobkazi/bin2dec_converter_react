@@ -84,7 +84,7 @@ const TodoForm = () => {
 
   return (
     <form onSubmit={handleSubmit} className="bg-purple-800 rounded-lg shadow-lg p-6">
-      <h1 className="text-2xl font-bold mb-4 text-center">Add New Task</h1>
+      <h1 className="text-2xl bg-purple-400 font-bold mb-4 text-center">Add New Task</h1>
       {errorMessage && <div className="text-red-500 mb-2">{errorMessage}</div>}
       {successMessage && <div className="text-green-500 mb-2">{successMessage}</div>}
       <input

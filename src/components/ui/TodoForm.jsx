@@ -48,7 +48,7 @@ const TodoForm = ({ addTodo }) => {
   };
 
   return (
-    <form onSubmit={handleSubmit} className="bg-white rounded-lg shadow-lg p-6">
+    <form onSubmit={handleSubmit} className="bg-purple-400 rounded-lg shadow-lg p-6">
       <h1 className="text-2xl font-bold mb-4 text-center">Add New Task</h1>
       <input
         type="text"

@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 
 const PercentageCalculator = () => {
   const [part, setPart] = useState("");
@@ -28,7 +28,7 @@ const PercentageCalculator = () => {
 
   return (
     <div className="flex flex-col items-center justify-center min-h-screen bg-purple-800 p-4">
-      <div className="bg-white shadow-lg rounded-lg p-6 w-full max-w-md">
+      <div className="bg-purple-400 shadow-lg rounded-lg p-6 w-full max-w-md">
         <h1 className="text-2xl font-bold mb-4 text-center">
           Percentage Calculator
         </h1>

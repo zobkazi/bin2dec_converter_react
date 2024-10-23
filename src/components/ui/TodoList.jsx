@@ -13,7 +13,7 @@ const TodoList = ({ todos, toggleComplete, removeTodo }) => {
               key={index}
               className={`flex justify-between items-center p-2 mb-2 ${
                 todo.completed ? "line-through text-gray-500" : ""
-              } bg-gray-100 rounded-lg`}
+              } bg-purple-400 rounded-lg`}
             >
               <div>
                 <span

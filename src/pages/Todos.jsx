@@ -7,7 +7,7 @@ const TodoList = () => {
 
   return (
     <div className="w-full max-w-md">
-      <h1 className="text-2xl font-bold mb-4 text-center">Task List</h1>
+      <h1 className="text-2xl text-red-300 font-bold mb-4 text-center">Task List</h1>
       <ul className="mt-4">
         {todos.length === 0 ? (
           <p className="text-center text-gray-500">No tasks added yet!</p>
