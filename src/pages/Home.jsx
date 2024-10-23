@@ -5,7 +5,7 @@ import 'react-toastify/dist/ReactToastify.css'; // Make sure to import the CSS
 
 const Home = () => {
   const [email, setEmail] = useState("");
-  const [message] = useState("");
+  const [message, setMessage] = useState("");
   const [error, setError] = useState(false);
 
   const handleSubmit = async (e) => {
@@ -28,7 +28,7 @@ const Home = () => {
     }
 
     try {
-      const response = await axios.post("/api/subscribe", { email });
+      const response = await axios.post("/", { email });
       if (response.status === 200) {
         toast.success("Success! Check your email for further instructions.", {
           position: "top-center",
@@ -52,8 +52,7 @@ const Home = () => {
         draggable: true,
         transition: Bounce,
       });
-      setError(false);
-      console.error(error);
+      setEmail(""); // Clear the input field
     }
   };
 
