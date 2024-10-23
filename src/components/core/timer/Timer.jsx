@@ -1,4 +1,6 @@
 import { useState, useEffect } from "react";
+import { ToastContainer, toast } from 'react-toastify'; 
+
 
 const Timer = () => {
   // Timer state
@@ -16,7 +18,8 @@ const Timer = () => {
       }, 1000);
     } else if (time === 0 && isActive) {
       setIsActive(false);
-      alert("Time's up!");
+      setIsPaused(false);
+      toast.success('Timer completed!');
     }
 
     return () => clearInterval(interval);

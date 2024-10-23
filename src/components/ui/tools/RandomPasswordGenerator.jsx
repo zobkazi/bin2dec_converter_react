@@ -1,7 +1,9 @@
-import React, { useState } from 'react';
+import  { useState } from 'react';
+import swal from 'sweetalert';
+
 
 const RandomPasswordGenerator = () => {
-  const [passwordLength, setPasswordLength] = useState(60);
+  const [passwordLength, setPasswordLength] = useState(6);
   const [password, setPassword] = useState('');
   const [useUppercase, setUseUppercase] = useState(true);
   const [useLowercase, setUseLowercase] = useState(true);
@@ -10,7 +12,6 @@ const RandomPasswordGenerator = () => {
 
   const generatePassword = () => {
     let characterSet = '';
-    const similarChars = '1lIioO0';
 
     if (useUppercase) characterSet += 'ABCDEFGHJKLMNOPQRSTUVWXYZ'; // A-Z without similar
     if (useLowercase) characterSet += 'abcdefghijkmnopqrstuvwxyz'; // a-z without similar
@@ -28,11 +29,23 @@ const RandomPasswordGenerator = () => {
 
   const copyToClipboard = () => {
     navigator.clipboard.writeText(password);
-    alert('Password copied to clipboard!');
+
+    swal({
+      title: 'Copied!',
+      text: `Password has been copied to clipboard as ${password}`,
+      icon: 'success',
+      button: 'OK',
+    }).then(() => {
+      setPassword('');
+      setUseUppercase(true);
+      setUseLowercase(true);
+      setUseNumbers(true);
+      setUseSymbols(true);
+    });
   };
 
   const resetForm = () => {
-    setPasswordLength(60);
+    setPasswordLength(20);
     setPassword('');
     setUseUppercase(true);
     setUseLowercase(true);
@@ -47,7 +60,8 @@ const RandomPasswordGenerator = () => {
   };
 
   return (
-    <div className="max-w-md mx-auto p-6 bg-white rounded-lg shadow-lg text-center transition-transform transform hover:scale-105">
+   <div className="flex flex-col items-center justify-center min-h-screen bg-purple-800 p-4">
+     <div className="max-w-md mx-auto p-6 bg-purple-400 rounded-lg shadow-lg text-center transition-transform transform hover:scale-105">
       <h1 className="text-3xl font-semibold mb-6 text-blue-600">Random Password Generator</h1>
       <div className="mb-4">
         <label className="block mb-1 text-left font-medium">Password Length:</label>
@@ -125,6 +139,7 @@ const RandomPasswordGenerator = () => {
         Reset
       </button>
     </div>
+   </div>
   );
 };
 
