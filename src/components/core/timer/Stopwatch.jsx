@@ -52,7 +52,7 @@ const Stopwatch = () => {
 
   return (
     <div className="min-h-screen bg-purple-800 flex flex-col items-center justify-center">
-      <div className="bg-white p-8 rounded-lg shadow-lg text-center">
+      <div className="bg-purple-400 p-8 rounded-lg shadow-lg text-center">
         <h1 className="text-4xl font-bold text-gray-700 mb-8">Stopwatch</h1>
 
         {/* Display the formatted time */}
